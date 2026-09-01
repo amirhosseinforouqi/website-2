@@ -206,6 +206,81 @@
     render();
   });
 
+  /* ---- scroll reveal ------------------------------------------------------
+     Progressive enhancement, strictly. Only elements that are still BELOW the
+     fold when this runs are ever hidden, so nothing the reader has already
+     been shown can flicker, and a browser without IntersectionObserver (or a
+     reader who asked for less motion) simply gets the finished page. */
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var groups = [
+      [".svc-hero-inner > *", 70, "text"],
+      [".svc-hero-video", 0, "media"],
+      [".svc-glance-grid > div", 70, "text"],
+      [".svc-split > .svc-body", 0, "text"],
+      [".svc-split figure", 0, "media"],
+      [".svc-sec > .svc-wrap > .svc-prose", 0, "text"],
+      [".svc-steps li", 80, "text"],
+      [".svc-faq", 0, "text"],
+      [".svc-band .svc-wrap > *", 80, "text"],
+      [".svc-related-grid a", 60, "text"],
+      [".blog-card", 60, "text"],
+    ];
+
+    var below = window.innerHeight * 0.9;
+    var targets = [];
+
+    groups.forEach(function (g) {
+      var els = document.querySelectorAll(g[0]);
+      Array.prototype.forEach.call(els, function (el, i) {
+        if (el.getBoundingClientRect().top < below) return; /* already seen */
+        el.setAttribute("data-reveal", g[2] === "media" ? "media" : "");
+        if (g[1]) el.style.setProperty("--reveal-delay", i * g[1] + "ms");
+        targets.push(el);
+      });
+    });
+
+    if (targets.length) {
+      document.documentElement.classList.add("reveal-on");
+
+      var show = function (el) {
+        el.classList.add("is-in");
+        revealIO.unobserve(el);
+        var i = targets.indexOf(el);
+        if (i > -1) targets.splice(i, 1);
+        if (!targets.length) window.removeEventListener("scroll", sweep);
+      };
+
+      var revealIO = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) show(en.target);
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+      );
+
+      /* Backstop. A jump — an in-page anchor, End, a flick on a trackpad —
+         can carry an element from below the viewport to above it without the
+         ratio ever crossing a threshold, so the observer never reports it and
+         the element would stay invisible for the rest of the visit. This
+         sweep reveals anything the viewport has already reached or passed. */
+      var queued = false;
+      var sweep = function () {
+        if (queued) return;
+        queued = true;
+        window.requestAnimationFrame(function () {
+          queued = false;
+          targets.slice().forEach(function (el) {
+            if (el.getBoundingClientRect().top < window.innerHeight) show(el);
+          });
+        });
+      };
+
+      targets.forEach(function (el) { revealIO.observe(el); });
+      window.addEventListener("scroll", sweep, { passive: true });
+    }
+  }
+
   /* ---- ambient video ---- */
   var bands = document.querySelectorAll(".band-video");
   if (bands.length && !reduceMotion) {

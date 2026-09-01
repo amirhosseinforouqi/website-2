@@ -3,27 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%238F6347%22/%3E%3Ctext%20x%3D%2233%22%20y%3D%2245%22%20font-family%3D%22serif%22%20font-size%3D%2238%22%20font-weight%3D%22600%22%20fill%3D%22%23FBFAF9%22%20text-anchor%3D%22middle%22%3EF%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230A2A6E%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2246%22%20font-family%3D%22Helvetica%2CArial%2Csans-serif%22%20font-size%3D%2240%22%20font-weight%3D%22900%22%20fill%3D%22%23FFFFFF%22%20text-anchor%3D%22middle%22%3EF%3C/text%3E%3C/svg%3E">
   <title>Foroughi &amp; Co | Ontario Mortgage Agent, Toronto</title>
   <meta name="description" content="Independent mortgage advice in Toronto and across Ontario. Purchases, renewals, refinancing, self-employed and newcomer files. Amir Foroughi, Mortgage Agent — Real Mortgage Associates.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css?v=39">
-  <script>
-  /* Splash gate — runs before first paint. Skips the intro when it already
-     played this session, or when the visit arrives from an ad/UTM link. */
-  (function () {
-    try {
-      var skip =
-        sessionStorage.getItem("fmIntroSeen") === "1" ||
-        /[?&](utm_[a-z]+|gclid|gbraid|wbraid|fbclid|msclkid|ttclid|twclid)=/i.test(window.location.search);
-      document.documentElement.classList.add(skip ? "no-splash" : "intro-lock");
-    } catch (e) {
-      document.documentElement.classList.add("no-splash");
-    }
-  })();
-  </script>
+  <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tw.css?v=20">
+  <link rel="stylesheet" href="css/page.css?v=20">
+  <link rel="stylesheet" href="css/main.css?v=40">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,162 +22,391 @@
   }
   </script>
 </head>
-<body class="home">
-  <a class="skip" href="#intro">Skip to content</a>
-
-  <!-- once-per-session splash intro (js/intro-splash.js).
-       .splash-media holds a stack of images the intro flashes through rapidly;
-       swap this list for your own splash photography (any count ≥1). -->
-  <div id="intro-splash" aria-hidden="true">
-    <div class="splash-media">
-      <img class="splash-slide" src="assets/photos/index-1.jpg" alt="" decoding="async" fetchpriority="high">
-      <img class="splash-slide" src="assets/photos/index-2.jpg" alt="" decoding="async">
-      <img class="splash-slide" src="assets/photos/hero-newcomers-to-canada.jpg" alt="" decoding="async">
-      <img class="splash-slide" src="assets/photos/hero-commercial.jpg" alt="" decoding="async">
-      <img class="splash-slide" src="assets/photos/about-1.jpg" alt="" decoding="async">
-      <div class="splash-scrim"></div>
+<body class="svc-page home" data-service="">
+  <div class="site-top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="sh">
+    <a class="sh-brand" href="index.html">Foroughi<span>&amp; Co</span></a>
+    <nav class="sh-nav" aria-label="Primary">
+      <button type="button" class="sh-link" data-open-menu="menuOverlay" aria-expanded="false" aria-controls="menuOverlay">Mortgages<svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <a class="sh-link" href="tools.html">Tools</a>
+      <button type="button" class="sh-link" data-open-menu="aboutOverlay" aria-expanded="false" aria-controls="aboutOverlay">About<svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+    </nav>
+    <div class="sh-actions">
+      <a class="sh-util" href="tel:+14166027093">(416) 602-7093</a>
+      <button type="button" class="btn" data-open-panel>Request a callback</button>
+      <button type="button" class="sh-burger" data-open-menu="menuOverlay" aria-expanded="false" aria-controls="menuOverlay" aria-label="Open menu"><svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 1h16M1 6h16M1 11h16"/></svg></button>
     </div>
-    <div class="splash-logo">
-      <span class="splash-wm">Foroughi</span>
-      <span class="splash-sub">&amp; Co</span>
-    </div>
-  </div>
-  <noscript><style>#intro-splash{display:none}</style></noscript>
-
-  <!-- one fixed background clip; loops on its own, independent of scroll -->
-  <div class="hero-media" aria-hidden="true">
-    <video id="scrubVideo" class="bgv-scrub" muted playsinline autoplay loop preload="auto" poster="assets/hero-poster.jpg?v=2">
-      <source src="assets/go-train.webm" type="video/webm">
-    </video>
-    <div class="scrim"></div>
-  </div>
-
-  <button class="menu-btn" aria-expanded="false" aria-controls="railNav">Menu</button>
-
-  <header class="topbar">
-    <p class="home-logo">Foroughi <span>&amp; Co</span></p>
-
-    <nav class="rail" id="railNav" aria-label="Primary">
-    <ul>
-      <li class="has-sub">
-        <a role="button" tabindex="0" aria-haspopup="true">Mortgages</a>
-        <div class="sub" role="menu" aria-label="Mortgage services">
-          <div class="sub-groups">
-            <div class="sub-group" role="group" aria-labelledby="mg-manage">
-              <p class="sub-head" id="mg-manage">Manage</p>
-              <a role="menuitem" href="mortgages/renewals-and-switches.html">Renewals &amp; Switches</a>
-              <a role="menuitem" href="mortgages/refinance.html">Refinance</a>
+  </header>
+  <div class="nav-reveal" id="menuOverlay" role="region" aria-label="Mortgage services">
+    <div class="nav-reveal-inner">
+      <div class="nav-reveal-scroll">
+        <div class="nav-reveal-grid">
+          <div class="nav-reveal-cols">
+            <div>
+              <p class="nav-reveal-head">Buy</p>
+              <ul class="nav-reveal-list">
+                <li><a href="mortgages/pre-qualify.html">Pre-Qualify</a></li>
+                <li><a href="mortgages/first-time-home-buyer.html">First-Time Buyer</a></li>
+                <li><a href="mortgages/investment-properties.html">Investment Properties</a></li>
+                <li><a href="mortgages/pre-construction.html">Pre-Construction</a></li>
+              </ul>
             </div>
-            <div class="sub-group" role="group" aria-labelledby="mg-buy">
-              <p class="sub-head" id="mg-buy">Buy</p>
-              <a role="menuitem" href="mortgages/pre-qualify.html">Pre-Qualify</a>
-              <a role="menuitem" href="mortgages/first-time-home-buyer.html">First-Time Buyer</a>
-              <a role="menuitem" href="mortgages/investment-properties.html">Investment Properties</a>
-              <a role="menuitem" href="mortgages/pre-construction.html">Pre-Construction</a>
+            <div>
+              <p class="nav-reveal-head">Manage</p>
+              <ul class="nav-reveal-list">
+                <li><a href="mortgages/renewals-and-switches.html">Renewals &amp; Switches</a></li>
+                <li><a href="mortgages/refinance.html">Refinance</a></li>
+              </ul>
             </div>
-            <div class="sub-group" role="group" aria-labelledby="mg-situation">
-              <p class="sub-head" id="mg-situation">Your situation</p>
-              <a role="menuitem" href="mortgages/self-employed.html">Self-Employed</a>
-              <a role="menuitem" href="mortgages/newcomers-to-canada.html">Newcomers to Canada</a>
-              <a role="menuitem" href="mortgages/private-lending.html">Private &amp; Alternative Lending</a>
-              <a role="menuitem" href="mortgages/complex-mortgages.html">Complex Mortgages</a>
-              <a role="menuitem" href="mortgages/business-commercial.html">Business &amp; Commercial</a>
+            <div>
+              <p class="nav-reveal-head">Your situation</p>
+              <ul class="nav-reveal-list">
+                <li><a href="mortgages/self-employed.html">Self-Employed</a></li>
+                <li><a href="mortgages/newcomers-to-canada.html">Newcomers to Canada</a></li>
+                <li><a href="mortgages/private-lending.html">Private &amp; Alternative Lending</a></li>
+                <li><a href="mortgages/complex-mortgages.html">Complex Mortgages</a></li>
+                <li><a href="mortgages/business-commercial.html">Business &amp; Commercial</a></li>
+              </ul>
+            </div>
+            <div class="nav-mobile-only">
+              <p class="nav-reveal-head">More</p>
+              <ul class="nav-reveal-list">
+                <li><a href="tools.html">Tools &amp; calculators</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
             </div>
           </div>
+          <dl class="nav-reveal-info">
+            <dt>Speak to Amir</dt>
+            <dd><a href="tel:+14166027093">(416) 602-7093</a><br>
+                <a href="mailto:amir.foroughi@rmabroker.ca">amir.foroughi@rmabroker.ca</a></dd>
+            <dt>Hours</dt>
+            <dd>Monday&ndash;Saturday, 9:00&ndash;19:00</dd>
+            <dt>Serving</dt>
+            <dd>Toronto &amp; all of Ontario<br>Amir Foroughi &middot; Mortgage Agent #M26000833<br>Real Mortgage Associates &middot; Brokerage #10464</dd>
+          </dl>
         </div>
-      </li>
-      <!-- Blog and Contact removed by request; with About the only remaining
-           item there is nothing left to drop down, so it goes straight to the
-           page like Tools. Both pages stay linked from every interior page. -->
-      <li><a href="about.html">About</a></li>
-      <li><a href="tools.html">Tools</a></li>
-    </ul>
-    </nav>
-  </header>
+      </div>
+    </div>
+  </div>
+  <div class="nav-reveal nav-reveal-about" id="aboutOverlay" role="region" aria-label="About and more">
+    <div class="nav-reveal-inner">
+      <div class="nav-reveal-scroll">
+        <div class="nav-reveal-grid">
+          <div class="nav-reveal-cols">
+            <div>
+              <p class="nav-reveal-head">About &amp; more</p>
+              <ul class="nav-reveal-list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+          <dl class="nav-reveal-info">
+            <dt>Speak to Amir</dt>
+            <dd><a href="tel:+14166027093">(416) 602-7093</a><br>
+                <a href="mailto:amir.foroughi@rmabroker.ca">amir.foroughi@rmabroker.ca</a></dd>
+            <dt>Hours</dt>
+            <dd>Monday&ndash;Saturday, 9:00&ndash;19:00</dd>
+            <dt>Serving</dt>
+            <dd>Toronto &amp; all of Ontario<br>Amir Foroughi &middot; Mortgage Agent #M26000833<br>Real Mortgage Associates &middot; Brokerage #10464</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
-  <main>
-    <section class="hsec" data-chip="Intro">
-      <div class="hsec-copy" id="intro">
-        <h1 class="hero-title">We Turn Mortgage Options Into Opportunities</h1>
-        <div class="cta-row">
-          <button class="btn-pill" data-open-panel>Request a callback</button>
+  <main id="main">
+
+    <!-- 1. Bright audience hero ------------------------------------------ -->
+    <section class="hp-hero">
+      <div class="hp-hero-copy">
+        <div class="hp-seg" role="tablist" aria-label="Where you are with your mortgage">
+          <button type="button" role="tab" id="segBuy" aria-controls="heroBuy" aria-selected="true">I'm buying</button>
+          <button type="button" role="tab" id="segOwn" aria-controls="heroOwn" aria-selected="false" tabindex="-1">I already own</button>
+        </div>
+
+        <h1>We Turn Mortgage Options Into Opportunities</h1>
+
+        <div id="heroBuy" role="tabpanel" aria-labelledby="segBuy">
+          <p class="hp-hero-lede">Know your number first. Pre-qualifying is free, takes days not weeks, and commits you to nothing — and the rate is held for up to 120 days while you shop.</p>
+          <div class="hp-hero-cta">
+            <button type="button" class="btn" data-open-panel>Request a callback</button>
+            <a class="hp-hero-next" href="mortgages/pre-qualify.html">Start with a pre-qualification</a>
+          </div>
+        </div>
+
+        <div id="heroOwn" role="tabpanel" aria-labelledby="segOwn" hidden>
+          <p class="hp-hero-lede">When your term ends, your lender sends you a letter with a new rate. You do not have to accept it. Shopping around is free, and I do the work for you.</p>
+          <div class="hp-hero-cta">
+            <button type="button" class="btn" data-open-panel>Request a callback</button>
+            <a class="hp-hero-next" href="mortgages/renewals-and-switches.html">Look at renewals &amp; switches</a>
+          </div>
+        </div>
+      </div>
+
+      <video class="hp-hero-media band-video" muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true">
+        <source src="assets/go-train.webm" type="video/webm">
+      </video>
+    </section>
+
+    <!-- 2. Alternating split features -------------------------------------- -->
+    <section class="svc-sec">
+      <div class="svc-wrap">
+        <div class="svc-split">
+          <div class="svc-body">
+            <p class="svc-kicker">How this practice works</p>
+            <h2>Independent, by structure.</h2>
+            <p>I don't work for any lender — your file goes in front of forty-plus of them, and the offers compete. On standard residential files the winning lender pays the brokerage, so independence costs you nothing (OAC).</p>
+            <p>Penalty math is shown before a term is broken. Alternative lending is priced in dollars, not adjectives. And when staying with your current lender is the right answer, that's the recommendation you'll hear.</p>
+            <div class="svc-cta-row">
+              <a class="btn btn-soft" href="about.html">About the practice</a>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/photos/about-2.jpg" alt="A desk with documents and a laptop bag" loading="lazy" decoding="async">
+          </figure>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="strip">
-    <p class="locale">Toronto &middot; Ontario</p>
-  </footer>
-
-  <div class="panel-overlay" hidden></div>
-
-  <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle" hidden>
-    <button class="panel-close" aria-label="Close">&times;</button>
-    <h2 id="panelTitle">Request a callback</h2>
-    <p class="panel-sub">Tell me where you are in the process. I'll call you back the same business day.</p>
-
-    <!-- TODO: point action at Web3Forms/Formspree endpoint before launch -->
-    <form novalidate>
-      <div class="field">
-        <label for="cbName">Full name</label>
-        <input id="cbName" name="name" type="text" autocomplete="name" required>
-      </div>
-      <div class="field">
-        <label for="cbPhone">Phone</label>
-        <input id="cbPhone" name="phone" type="tel" autocomplete="tel" required>
-      </div>
-      <div class="field">
-        <label for="cbEmail">Email</label>
-        <input id="cbEmail" name="email" type="email" autocomplete="email" required>
-      </div>
-      <div class="field">
-        <label for="cbService">What's this about?</label>
-        <select id="cbService" name="service" required>
-          <option value="" selected disabled>Choose one</option>
-          <option>Pre-qualification</option>
-          <option>Buying a home</option>
-          <option>First-time buyer</option>
-          <option>Moving up — my next home</option>
-          <option>Renewal or switch</option>
-          <option>Refinancing or accessing equity</option>
-          <option>Self-employed mortgage</option>
-          <option>Investment or rental property</option>
-          <option>Vacation or second home</option>
-          <option>New to Canada</option>
-          <option>Reverse mortgage</option>
-          <option>Private or alternative lending</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div class="field">
-        <label id="cbTimeLabel">Best time to call</label>
-        <div class="seg" role="radiogroup" aria-labelledby="cbTimeLabel">
-          <input type="radio" id="tMorning" name="calltime" value="Morning" checked>
-          <label for="tMorning">Morning</label>
-          <input type="radio" id="tAfternoon" name="calltime" value="Afternoon">
-          <label for="tAfternoon">Afternoon</label>
-          <input type="radio" id="tEvening" name="calltime" value="Evening">
-          <label for="tEvening">Evening</label>
+    <section class="svc-sec">
+      <div class="svc-wrap">
+        <div class="svc-split is-flipped">
+          <div class="svc-body">
+            <p class="svc-kicker">Who this is for</p>
+            <h2>Every kind of file.</h2>
+            <p>I'm Amir Foroughi — an independent mortgage agent with Real Mortgage Associates, working with buyers, owners, and business people across Toronto and Ontario, in English and in Farsi. Licensed by FSRA as a Mortgage Agent Level 2, which is what allows private and alternative lending — not every agent's licence covers it.</p>
+            <p>First homes, renewals, refinances, self-employed income, newcomer programs, investment portfolios, private bridges, and <a href="mortgages/business-commercial.html">business and commercial financing</a>.</p>
+            <div class="svc-cta-row">
+              <a class="btn btn-soft" href="mortgages/pre-qualify.html">See where files usually start</a>
+            </div>
+          </div>
+          <figure>
+            <img src="assets/photos/index-2.jpg" alt="A Toronto street of low-rise homes" loading="lazy" decoding="async">
+          </figure>
         </div>
       </div>
-      <div class="hp" aria-hidden="true">
-        <label for="cbCompany">Company</label>
-        <input id="cbCompany" name="company" type="text" tabindex="-1" autocomplete="off">
-      </div>
-      <button class="btn-pill" type="submit">Request my callback</button>
-      <p class="panel-fine">No obligation. Your details stay in this office.</p>
-    </form>
+    </section>
 
-    <div class="panel-success">
-      <h3>Got it.</h3>
-      <p>Your callback is in the queue — expect to hear from Amir within one business day, at the time you asked for. If it's urgent, the contact page has direct lines.</p>
+    <!-- 3. Trust / proof stack --------------------------------------------- -->
+    <section class="svc-sec svc-sec--tint">
+      <div class="svc-wrap">
+        <p class="svc-kicker">What you can hold me to</p>
+        <h2>Three commitments, in writing.</h2>
+        <div class="hp-cols">
+          <div>
+            <h3>Numbers first — even the bad ones</h3>
+            <p>Every recommendation arrives with its arithmetic attached. If a deal doesn't clear its costs, you'll hear 'wait' — and that answer is free.</p>
+          </div>
+          <div>
+            <h3>A file, not a deal</h3>
+            <p>Mortgages renew, mature, and change with your life. Your renewal gets flagged 120 days out and re-shopped, every term, without you asking.</p>
+          </div>
+          <div>
+            <h3>Every kind of file</h3>
+            <p>First homes, renewals, refinances, self-employed income, newcomer programs, investment portfolios, private bridges, and business and commercial financing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Editorial break -------------------------------------------------- -->
+    <section class="hp-break">
+      <div class="svc-wrap">
+        <p>Licensed in Ontario. Working across the GTA. Answering in English and Farsi.</p>
+        <p class="hp-break-note">Amir Foroughi &middot; Mortgage Agent #M26000833 &middot; Real Mortgage Associates &middot; Brokerage #10464. Monday&ndash;Saturday, 9:00&ndash;19:00.</p>
+      </div>
+    </section>
+
+    <!-- 5. Two-path story sequence ------------------------------------------ -->
+    <section class="hp-story" id="paths">
+      <div class="svc-wrap">
+        <p class="svc-kicker">Two ways in</p>
+        <h2>Wherever you are with it now</h2>
+
+        <div class="hp-story-tabs" role="tablist" aria-label="Choose your path">
+          <button type="button" role="tab" id="pathBuyTab" aria-controls="pathBuy" aria-selected="true" data-frame="assets/photos/hero-first-time-home-buyer.jpg">I'm buying</button>
+          <button type="button" role="tab" id="pathOwnTab" aria-controls="pathOwn" aria-selected="false" tabindex="-1" data-frame="assets/photos/hero-refinance.jpg">I already own</button>
+        </div>
+
+        <div class="hp-story-body">
+          <figure class="hp-story-frame">
+            <img id="storyFrame" src="assets/photos/hero-first-time-home-buyer.jpg" alt="" loading="lazy" decoding="async">
+          </figure>
+
+          <div class="hp-story-panels">
+            <div id="pathBuy" role="tabpanel" aria-labelledby="pathBuyTab" tabindex="0">
+              <ol class="hp-steps">
+                <li>
+                  <h3><a href="mortgages/pre-qualify.html">Know your number first</a></h3>
+                  <p>Pre-qualifying is free, takes days not weeks, and commits you to nothing. You get the number that makes every other decision easier — and a rate held for up to 120 days while you shop.</p>
+                </li>
+                <li>
+                  <h3><a href="mortgages/first-time-home-buyer.html">Your first home</a></h3>
+                  <p>Nobody is born understanding mortgages. You bring the questions — I bring the programs, the rebates, and more than 40 lenders. Buying your first home is a series of small, clear steps.</p>
+                </li>
+                <li>
+                  <h3><a href="mortgages/moving-up.html">Moving up to your next home</a></h3>
+                  <p>The second move is a timing problem: selling, buying, and moving your equity so two closings land as one move.</p>
+                </li>
+                <li>
+                  <h3><a href="mortgages/investment-properties.html">Investment &amp; vacation properties</a></h3>
+                  <p>A rental property is a small business with a roof. A cottage is a family plan with a driveway. Lenders treat each one differently.</p>
+                </li>
+              </ol>
+            </div>
+
+            <div id="pathOwn" role="tabpanel" aria-labelledby="pathOwnTab" tabindex="0" hidden>
+              <ol class="hp-steps">
+                <li>
+                  <h3><a href="mortgages/renewals-and-switches.html">Renewals &amp; switches</a></h3>
+                  <p>When your mortgage term ends, your lender sends you a letter with a new rate. You do not have to accept it. Shopping around is free, and I do the work for you.</p>
+                </li>
+                <li>
+                  <h3><a href="mortgages/refinance.html">Refinancing &amp; using your home's equity</a></h3>
+                  <p>A refinance replaces your mortgage with a new one — to pay off expensive debt, fund a renovation, or reshape your payments. And when a full refinance is too much, a credit line on your equity can do the job instead.</p>
+                </li>
+                <li>
+                  <h3><a href="mortgages/self-employed.html">Mortgages for the self-employed</a></h3>
+                  <p>You run a business, drive for yourself, or freelance. Your tax return makes your income look small — on purpose. Banks read that number literally. The right lenders read the real story.</p>
+                </li>
+                <li>
+                  <h3><a href="mortgages/reverse-mortgage.html">Reverse mortgages, without the mystery</a></h3>
+                  <p>Homeowners 55 and over can turn part of their home's value into tax-free cash — with no monthly payments and no move.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Closing CTA ------------------------------------------------------ -->
+    <section class="svc-band">
+      <div class="svc-wrap">
+        <div>
+          <h2>Say when. I'll call.</h2>
+          <p>Tell me where you are in the process. I'll call you back the same business day — no obligation, and the honest answer even when it is 'wait'.</p>
+        </div>
+        <button type="button" data-open-panel class="btn-solid">Request a callback</button>
+      </div>
+    </section>
+
+    <!-- 7. Legal notes ------------------------------------------------------ -->
+    <section class="hp-legal">
+      <div class="svc-wrap">
+        <p>Amir Foroughi &middot; Mortgage Agent #M26000833 &middot; Real Mortgage Associates &middot; Brokerage #10464. Serving Toronto &amp; all of Ontario.</p>
+        <p>All mortgages are subject to lender approval and credit criteria (OAC). Rates, programs and figures shown across this site are illustrative and can change without notice; your own numbers are confirmed in writing before anything is signed.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-warm1 pt-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 px-8 md:px-14 pb-12">
+      <div>
+        <p class="font-serif text-2xl mb-2">Notes from the practice</p>
+        <p class="text-sm text-inkc/60 mb-4">Occasional, plain-English notes on rates and rules. No noise.</p>
+        <form data-newsletter class="flex gap-2">
+          <label class="sr-only" for="nlEmail">Email address</label>
+          <input id="nlEmail" type="email" required class="border border-black/10 rounded px-4 py-3 flex-1 bg-cream text-sm min-w-0" placeholder="Email address">
+          <button class="border border-black/20 px-4 py-3 uppercase text-xs rounded hover:border-brown hover:text-brown transition-colors">Sign up</button>
+        </form>
+        <p data-newsletter-ok class="hidden text-sm text-teal mt-3">You're on the list — expect the occasional useful note, nothing more.</p>
+      </div>
+      <div>
+        <p class="text-brown mb-4 uppercase text-xs tracking-widest">Mortgage services</p>
+        <ul class="space-y-2 text-sm text-inkc/70">
+          <li><a class="hover:text-brown transition-colors" href="mortgages/renewals-and-switches.html">Renewals &amp; Switches</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/self-employed.html">Self-Employed</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/first-time-home-buyer.html">First-Time Buyer</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/refinance.html">Refinance</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/investment-properties.html">Investment Properties</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/newcomers-to-canada.html">Newcomers to Canada</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-brown mb-4 uppercase text-xs tracking-widest">More services</p>
+        <ul class="space-y-2 text-sm text-inkc/70">
+          <li><a class="hover:text-brown transition-colors" href="mortgages/private-lending.html">Private &amp; Alternative Lending</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/complex-mortgages.html">Complex Mortgages</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/reverse-mortgage.html">Reverse Mortgage</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/pre-qualify.html">Pre-Qualify</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/moving-up.html">Moving Up</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-brown mb-4 uppercase text-xs tracking-widest">The practice</p>
+        <ul class="space-y-2 text-sm text-inkc/70">
+          <li><a class="hover:text-brown transition-colors" href="tools.html">Tools &amp; calculators</a></li>
+          <li><a class="hover:text-brown transition-colors" href="blog/index.html">Blog</a></li>
+          <li><a class="hover:text-brown transition-colors" href="about.html">About Amir</a></li>
+          <li><a class="hover:text-brown transition-colors" href="contact.html">Contact</a></li>
+          <li><a class="hover:text-brown transition-colors" href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-teal text-white flex flex-col md:flex-row gap-2 justify-between px-8 md:px-14 py-4 text-xs">
+      <span>© 2026 Foroughi &amp; Co</span>
+      <span class="opacity-80">Amir Foroughi · Mortgage Agent #M26000833 · Real Mortgage Associates · Brokerage #10464 · OAC</span>
+      <span class="flex gap-4"><a class="underline-offset-2 hover:underline" href="privacy.html">Privacy</a><a class="underline-offset-2 hover:underline" href="contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <div id="panelOverlay" class="fixed inset-0 z-50 bg-inkc/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle" class="fixed top-0 right-0 translate-x-full z-50 h-full w-full max-w-md bg-cream overflow-y-auto transition-transform duration-500 p-9 md:p-12" style="transition-timing-function:cubic-bezier(.22,.8,.2,1)">
+    <button data-close-panel aria-label="Close" class="absolute top-4 right-4 w-11 h-11 rounded-full text-2xl text-inkc/50 hover:text-inkc hover:bg-black/5 transition-colors">×</button>
+    <h2 id="panelTitle" class="font-serif text-3xl">Request a callback</h2>
+    <p class="text-sm text-inkc/60 mt-3 leading-relaxed">Tell me where you are in the process. I'll call you back the same business day.</p>
+    <!-- TODO: point action at Web3Forms endpoint before launch (key in js/sub.js) -->
+    <form data-callback novalidate class="mt-8 space-y-5">
+      <div><label class="block text-xs font-semibold uppercase tracking-wide mb-2" for="cbName">Full name</label>
+        <input id="cbName" name="name" type="text" autocomplete="name" required class="w-full border border-black/15 rounded px-4 py-3 bg-white text-sm"></div>
+      <div><label class="block text-xs font-semibold uppercase tracking-wide mb-2" for="cbPhone">Phone</label>
+        <input id="cbPhone" name="phone" type="tel" autocomplete="tel" required class="w-full border border-black/15 rounded px-4 py-3 bg-white text-sm"></div>
+      <div><label class="block text-xs font-semibold uppercase tracking-wide mb-2" for="cbEmail">Email</label>
+        <input id="cbEmail" name="email" type="email" autocomplete="email" required class="w-full border border-black/15 rounded px-4 py-3 bg-white text-sm"></div>
+      <div><label class="block text-xs font-semibold uppercase tracking-wide mb-2" for="cbService">What's this about?</label>
+        <select id="cbService" name="service" required class="w-full border border-black/15 rounded px-4 py-3 bg-white text-sm">
+          <option value="" selected disabled>Choose one</option>
+          <option value="Pre-qualification">Pre-qualification</option>
+          <option value="Buying a home">Buying a home</option>
+          <option value="First-time buyer">First-time buyer</option>
+          <option value="Moving up — my next home">Moving up — my next home</option>
+          <option value="Renewal or switch">Renewal or switch</option>
+          <option value="Refinancing or accessing equity">Refinancing or accessing equity</option>
+          <option value="Self-employed mortgage">Self-employed mortgage</option>
+          <option value="Investment or rental property">Investment or rental property</option>
+          <option value="Vacation or second home">Vacation or second home</option>
+          <option value="New to Canada">New to Canada</option>
+          <option value="Reverse mortgage">Reverse mortgage</option>
+          <option value="Private or alternative lending">Private or alternative lending</option>
+          <option value="Something else">Something else</option>
+        </select></div>
+      <div><span class="block text-xs font-semibold uppercase tracking-wide mb-2">Best time to call</span>
+        <div class="grid grid-cols-3 gap-2" role="radiogroup">
+          <label class="border border-black/15 rounded-sm py-2.5 text-center text-xs cursor-pointer has-[:checked]:border-brown has-[:checked]:text-brown has-[:checked]:bg-brown/5"><input class="sr-only" type="radio" name="calltime" value="Morning" checked>Morning</label>
+          <label class="border border-black/15 rounded-sm py-2.5 text-center text-xs cursor-pointer has-[:checked]:border-brown has-[:checked]:text-brown has-[:checked]:bg-brown/5"><input class="sr-only" type="radio" name="calltime" value="Afternoon">Afternoon</label>
+          <label class="border border-black/15 rounded-sm py-2.5 text-center text-xs cursor-pointer has-[:checked]:border-brown has-[:checked]:text-brown has-[:checked]:bg-brown/5"><input class="sr-only" type="radio" name="calltime" value="Evening">Evening</label>
+        </div></div>
+      <div class="absolute -left-[9999px] h-0 overflow-hidden" aria-hidden="true"><label for="cbCompany">Company</label><input id="cbCompany" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+      <button type="submit" class="border border-[#8F6347] text-[#8F6347] uppercase text-xs tracking-widest px-6 py-3 rounded-sm hover:bg-[#8F6347] hover:text-[#FBFAF9] transition-colors duration-300 w-full !py-4">Request my callback</button>
+      <p class="text-xs text-inkc/50 text-center">No obligation. Your details stay in this office.</p>
+    </form>
+    <div data-form-success class="hidden mt-12">
+      <h3 class="font-serif text-3xl">Got it.</h3>
+      <p class="mt-4 text-sm leading-relaxed text-inkc/70">Your callback is in the queue — expect to hear from Amir within one business day, at the time you asked for. If it's urgent, the contact page has direct lines.</p>
     </div>
   </aside>
 
-  <script src="js/main.js?v=10"></script>
-  <script src="js/vendor/gsap.min.js"></script>
-  <script src="js/home-scroll.js?v=16"></script>
-  <script src="js/intro-splash.js?v=4"></script>
+  <script src="js/sub.js?v=20"></script>
+  <script src="js/home.js?v=1"></script>
 </body>
 </html>
