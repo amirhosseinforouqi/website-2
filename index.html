@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%238F6347%22/%3E%3Ctext%20x%3D%2233%22%20y%3D%2245%22%20font-family%3D%22serif%22%20font-size%3D%2238%22%20font-weight%3D%22600%22%20fill%3D%22%23FBFAF9%22%20text-anchor%3D%22middle%22%3EF%3C/text%3E%3C/svg%3E">
+  <title>Foroughi &amp; Co | Ontario Mortgage Agent, Toronto</title>
+  <meta name="description" content="Independent mortgage advice in Toronto and across Ontario. Purchases, renewals, refinancing, self-employed and newcomer files. Amir Foroughi, Mortgage Agent — Real Mortgage Associates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css?v=39">
+  <script>
+  /* Splash gate — runs before first paint. Skips the intro when it already
+     played this session, or when the visit arrives from an ad/UTM link. */
+  (function () {
+    try {
+      var skip =
+        sessionStorage.getItem("fmIntroSeen") === "1" ||
+        /[?&](utm_[a-z]+|gclid|gbraid|wbraid|fbclid|msclkid|ttclid|twclid)=/i.test(window.location.search);
+      document.documentElement.classList.add(skip ? "no-splash" : "intro-lock");
+    } catch (e) {
+      document.documentElement.classList.add("no-splash");
+    }
+  })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MortgageBroker",
+    "name": "Foroughi & Co",
+    "employee": { "@type": "Person", "name": "Amir Foroughi", "jobTitle": "Mortgage Agent" },
+    "parentOrganization": { "@type": "Organization", "name": "Real Mortgage Associates" },
+    "areaServed": "Ontario, Canada",
+    "address": { "@type": "PostalAddress", "addressLocality": "Toronto", "addressRegion": "ON", "addressCountry": "CA" }
+  }
+  </script>
+</head>
+<body class="home">
+  <a class="skip" href="#intro">Skip to content</a>
+
+  <!-- once-per-session splash intro (js/intro-splash.js).
+       .splash-media holds a stack of images the intro flashes through rapidly;
+       swap this list for your own splash photography (any count ≥1). -->
+  <div id="intro-splash" aria-hidden="true">
+    <div class="splash-media">
+      <img class="splash-slide" src="assets/photos/index-1.jpg" alt="" decoding="async" fetchpriority="high">
+      <img class="splash-slide" src="assets/photos/index-2.jpg" alt="" decoding="async">
+      <img class="splash-slide" src="assets/photos/hero-newcomers-to-canada.jpg" alt="" decoding="async">
+      <img class="splash-slide" src="assets/photos/hero-commercial.jpg" alt="" decoding="async">
+      <img class="splash-slide" src="assets/photos/about-1.jpg" alt="" decoding="async">
+      <div class="splash-scrim"></div>
+    </div>
+    <div class="splash-logo">
+      <span class="splash-wm">Foroughi</span>
+      <span class="splash-sub">&amp; Co</span>
+    </div>
+  </div>
+  <noscript><style>#intro-splash{display:none}</style></noscript>
+
+  <!-- one fixed background clip; loops on its own, independent of scroll -->
+  <div class="hero-media" aria-hidden="true">
+    <video id="scrubVideo" class="bgv-scrub" muted playsinline autoplay loop preload="auto" poster="assets/hero-poster.jpg?v=2">
+      <source src="assets/go-train.webm" type="video/webm">
+    </video>
+    <div class="scrim"></div>
+  </div>
+
+  <button class="menu-btn" aria-expanded="false" aria-controls="railNav">Menu</button>
+
+  <header class="topbar">
+    <p class="home-logo">Foroughi <span>&amp; Co</span></p>
+
+    <nav class="rail" id="railNav" aria-label="Primary">
+    <ul>
+      <li class="has-sub">
+        <a role="button" tabindex="0" aria-haspopup="true">Mortgages</a>
+        <div class="sub" role="menu" aria-label="Mortgage services">
+          <div class="sub-groups">
+            <div class="sub-group" role="group" aria-labelledby="mg-manage">
+              <p class="sub-head" id="mg-manage">Manage</p>
+              <a role="menuitem" href="mortgages/renewals-and-switches.html">Renewals &amp; Switches</a>
+              <a role="menuitem" href="mortgages/refinance.html">Refinance</a>
+            </div>
+            <div class="sub-group" role="group" aria-labelledby="mg-buy">
+              <p class="sub-head" id="mg-buy">Buy</p>
+              <a role="menuitem" href="mortgages/pre-qualify.html">Pre-Qualify</a>
+              <a role="menuitem" href="mortgages/first-time-home-buyer.html">First-Time Buyer</a>
+              <a role="menuitem" href="mortgages/investment-properties.html">Investment Properties</a>
+              <a role="menuitem" href="mortgages/pre-construction.html">Pre-Construction</a>
+            </div>
+            <div class="sub-group" role="group" aria-labelledby="mg-situation">
+              <p class="sub-head" id="mg-situation">Your situation</p>
+              <a role="menuitem" href="mortgages/self-employed.html">Self-Employed</a>
+              <a role="menuitem" href="mortgages/newcomers-to-canada.html">Newcomers to Canada</a>
+              <a role="menuitem" href="mortgages/private-lending.html">Private &amp; Alternative Lending</a>
+              <a role="menuitem" href="mortgages/complex-mortgages.html">Complex Mortgages</a>
+              <a role="menuitem" href="mortgages/business-commercial.html">Business &amp; Commercial</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- Blog and Contact removed by request; with About the only remaining
+           item there is nothing left to drop down, so it goes straight to the
+           page like Tools. Both pages stay linked from every interior page. -->
+      <li><a href="about.html">About</a></li>
+      <li><a href="tools.html">Tools</a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hsec" data-chip="Intro">
+      <div class="hsec-copy" id="intro">
+        <h1 class="hero-title">We Turn Mortgage Options Into Opportunities</h1>
+        <div class="cta-row">
+          <button class="btn-pill" data-open-panel>Request a callback</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="strip">
+    <p class="locale">Toronto &middot; Ontario</p>
+  </footer>
+
+  <div class="panel-overlay" hidden></div>
+
+  <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle" hidden>
+    <button class="panel-close" aria-label="Close">&times;</button>
+    <h2 id="panelTitle">Request a callback</h2>
+    <p class="panel-sub">Tell me where you are in the process. I'll call you back the same business day.</p>
+
+    <!-- TODO: point action at Web3Forms/Formspree endpoint before launch -->
+    <form novalidate>
+      <div class="field">
+        <label for="cbName">Full name</label>
+        <input id="cbName" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="cbPhone">Phone</label>
+        <input id="cbPhone" name="phone" type="tel" autocomplete="tel" required>
+      </div>
+      <div class="field">
+        <label for="cbEmail">Email</label>
+        <input id="cbEmail" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="cbService">What's this about?</label>
+        <select id="cbService" name="service" required>
+          <option value="" selected disabled>Choose one</option>
+          <option>Pre-qualification</option>
+          <option>Buying a home</option>
+          <option>First-time buyer</option>
+          <option>Moving up — my next home</option>
+          <option>Renewal or switch</option>
+          <option>Refinancing or accessing equity</option>
+          <option>Self-employed mortgage</option>
+          <option>Investment or rental property</option>
+          <option>Vacation or second home</option>
+          <option>New to Canada</option>
+          <option>Reverse mortgage</option>
+          <option>Private or alternative lending</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label id="cbTimeLabel">Best time to call</label>
+        <div class="seg" role="radiogroup" aria-labelledby="cbTimeLabel">
+          <input type="radio" id="tMorning" name="calltime" value="Morning" checked>
+          <label for="tMorning">Morning</label>
+          <input type="radio" id="tAfternoon" name="calltime" value="Afternoon">
+          <label for="tAfternoon">Afternoon</label>
+          <input type="radio" id="tEvening" name="calltime" value="Evening">
+          <label for="tEvening">Evening</label>
+        </div>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="cbCompany">Company</label>
+        <input id="cbCompany" name="company" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button class="btn-pill" type="submit">Request my callback</button>
+      <p class="panel-fine">No obligation. Your details stay in this office.</p>
+    </form>
+
+    <div class="panel-success">
+      <h3>Got it.</h3>
+      <p>Your callback is in the queue — expect to hear from Amir within one business day, at the time you asked for. If it's urgent, the contact page has direct lines.</p>
+    </div>
+  </aside>
+
+  <script src="js/main.js?v=10"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/home-scroll.js?v=16"></script>
+  <script src="js/intro-splash.js?v=4"></script>
+</body>
+</html>

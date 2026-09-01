@@ -1,0 +1,773 @@
+/* ==========================================================================
+   Foroughi | mortgages — editorial system for service + blog pages
+   Loads AFTER tw.css. tw.css keeps styling the shared chrome (top bar,
+   header, menu overlay, footer, callback panel); everything inside <main>
+   on service/blog pages is styled here with semantic classes.
+
+   Principles: sans-serif display headings (Inter), tight tracking,
+   high-contrast ink on white/off-white, hairline dividers, asymmetric
+   two-column rows on desktop, single column on mobile. WCAG-AA text
+   colours throughout (small text never lighter than --ink-3).
+   ========================================================================== */
+
+/* Display typography follows a Swiss-grotesque model: a single family, every
+   heading at weight 400, hierarchy carried by size alone, and very tight
+   leading (~1.0–1.05). Body copy deliberately keeps a normal 1.6 line-height —
+   this audience often reads mortgage terms in a second language, and crushed
+   leading measurably slows sustained reading. */
+:root {
+  --paper: #ffffff;
+  --paper-2: #faf9f7;      /* warm off-white section alternate */
+  --ink: #111111;
+  --ink-2: #454340;        /* secondary body text  ~9.5:1 on paper */
+  --ink-3: #6b6660;        /* captions, kickers    ~5.3:1 on paper */
+  --accent: #8f6347;       /* brand brown — large text, rules, hovers */
+  --accent-deep: #6e4b33;  /* brand brown darkened for small text ~6.4:1 */
+  --teal-deep: #2e5f6c;    /* darkened brand teal — bands, ~6:1 w/ white */
+  --line: #e8e4df;         /* hairline divider */
+  --line-strong: #d8d2cb;
+  --measure: 62ch;
+  --pad-x: clamp(20px, 5vw, 64px);
+  --sec-y: clamp(56px, 9vw, 120px);
+  --ease: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+/* ---- base inside service/blog main ------------------------------------ */
+
+.svc-page main {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.svc-wrap {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.svc-page h1,
+.svc-page h2,
+.svc-page h3 {
+  font-family: "Inter", "Helvetica Neue", Helvetica, system-ui, sans-serif;
+  font-weight: 400;         /* hierarchy comes from size, not weight */
+  letter-spacing: -0.018em; /* Inter needs a touch of tightening at display size */
+  line-height: 1.03;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.svc-page main a:not([class]) {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(143, 99, 71, 0.4);
+  transition: text-decoration-color 0.2s ease;
+}
+
+.svc-page main a:not([class]):hover {
+  text-decoration-color: var(--accent-deep);
+}
+
+/* ---- shared type ------------------------------------------------------- */
+
+.svc-kicker {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-deep);
+  margin-bottom: 18px;
+}
+
+.svc-body p,
+.svc-body li {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: var(--measure);
+}
+
+.svc-body p + p {
+  margin-top: 14px;
+}
+
+.svc-body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.svc-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+}
+
+.svc-body ul li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+
+.svc-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 10px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* definition inline: <span class="svc-def">term</span> styled softly */
+.svc-def {
+  border-bottom: 1px dashed var(--line-strong);
+}
+
+/* ---- hero (full-bleed topic video) -------------------------------------- */
+
+.svc-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(460px, 70svh, 660px);
+  display: flex;
+  align-items: flex-end;
+  background: #12161a;
+}
+
+/* the video autoplays at every width (js/sub.js, .band-video); the poster
+   image shows on reduced-motion and before the clip loads */
+.svc-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Two stacked scrims: a vertical one for overall legibility, plus a stronger
+   left-side wash so the left-aligned copy stays readable over bright or busy
+   video frames (WCAG contrast holds regardless of which frame is on screen). */
+.svc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 13, 15, 0.28) 0%,
+      rgba(10, 13, 15, 0.19) 42%,
+      rgba(10, 13, 15, 0.06) 78%,
+      rgba(10, 13, 15, 0.03) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(10, 13, 15, 0.08) 0%,
+      rgba(10, 13, 15, 0.07) 52%,
+      rgba(10, 13, 15, 0.32) 100%
+    );
+}
+
+@media (max-width: 860px) {
+  /* narrow screens: copy spans the full width, so favour the vertical wash */
+  .svc-hero::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(10, 13, 15, 0.24) 0%,
+        rgba(10, 13, 15, 0.18) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(10, 13, 15, 0.11) 0%,
+        rgba(10, 13, 15, 0.14) 52%,
+        rgba(10, 13, 15, 0.38) 100%
+      );
+  }
+}
+
+.svc-hero .svc-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.svc-hero-inner {
+  max-width: 720px;
+  padding-block: clamp(40px, 6vw, 84px);
+}
+
+.svc-hero .svc-kicker {
+  color: #f1c9a4;
+}
+
+.svc-hero h1 {
+  color: #fff;
+  font-size: clamp(40px, 7vw, 92px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.022em;
+  margin: 0 0 24px;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+}
+
+.svc-lede {
+  font-size: clamp(18px, 2.1vw, 27px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.012em;
+  color: var(--ink-2);
+  max-width: 46ch;
+}
+
+.svc-hero .svc-lede {
+  color: rgba(255, 255, 255, 0.87);
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.35);
+}
+
+.svc-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 26px;
+  margin-top: 34px;
+}
+
+.svc-phone {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.svc-phone:hover {
+  color: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+
+.svc-hero .svc-phone {
+  color: rgba(255, 255, 255, 0.82);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.svc-hero .svc-phone:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* ---- at a glance -------------------------------------------------------- */
+
+.svc-glance {
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.svc-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  padding-block: 8px;
+}
+
+.svc-glance-grid > div {
+  padding: 26px 28px 26px 0;
+  margin-right: 28px;
+  border-right: 1px solid var(--line);
+}
+
+.svc-glance-grid > div:last-child {
+  border-right: 0;
+  margin-right: 0;
+}
+
+.svc-glance h3 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+  margin: 0 0 8px;
+}
+
+.svc-glance p {
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ---- sections ------------------------------------------------------------ */
+
+.svc-sec {
+  padding-block: var(--sec-y);
+  scroll-margin-top: 24px;
+}
+
+.svc-sec + .svc-sec {
+  border-top: 1px solid var(--line);
+}
+
+.svc-sec--tint {
+  background: var(--paper-2);
+}
+
+.svc-sec h2 {
+  font-size: clamp(30px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  max-width: 20ch;
+}
+
+.svc-sec-sub {
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.35;
+  color: var(--ink-3);
+  margin: 0 0 40px;
+  max-width: 52ch;
+}
+
+/* asymmetric split: text ~7 / figure ~5, flips with .is-flipped */
+.svc-split {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: start;
+}
+
+.svc-split figure {
+  margin: 0;
+  position: sticky;
+  top: 32px;
+}
+
+.svc-split.is-flipped figure {
+  order: -1;
+}
+
+.svc-split img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 6;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.svc-split figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+/* narrow prose section */
+.svc-prose {
+  max-width: 760px;
+}
+
+/* ---- "What this means for you" / example boxes --------------------------- */
+
+.svc-box {
+  margin-top: 34px;
+  max-width: 680px;
+  background: var(--paper-2);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 2px 2px 0;
+  padding: 24px 28px;
+}
+
+.svc-sec--tint .svc-box {
+  background: var(--paper);
+}
+
+.svc-box h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--accent-deep);
+  margin: 0 0 12px;
+}
+
+.svc-box p,
+.svc-box li {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.svc-box p + p {
+  margin-top: 10px;
+}
+
+/* ---- numbered steps ------------------------------------------------------- */
+
+.svc-steps {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+  max-width: 760px;
+  counter-reset: step;
+  border-top: 1px solid var(--line);
+}
+
+.svc-steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.svc-steps li::before {
+  content: "0" counter(step);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent-deep);
+  padding-top: 3px;
+}
+
+.svc-steps h3 {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+
+.svc-steps p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0;
+  max-width: 58ch;
+}
+
+/* ---- fact rows (costs, worked numbers) ------------------------------------- */
+
+.svc-facts {
+  margin-top: 30px;
+  max-width: 620px;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.svc-facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 0;
+  font-size: 15.5px;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.svc-facts > div:last-child {
+  border-bottom: 0;
+}
+
+.svc-facts > div.is-total {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.svc-facts > div.is-total span:last-child {
+  color: var(--accent-deep);
+}
+
+.svc-facts span:last-child {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.svc-facts-note {
+  margin-top: 12px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 60ch;
+}
+
+/* ---- FAQ -------------------------------------------------------------------- */
+
+.svc-faq {
+  max-width: 760px;
+}
+
+.svc-faq details {
+  border-bottom: 1px solid var(--line);
+}
+
+.svc-faq details:first-of-type {
+  border-top: 1px solid var(--line);
+}
+
+.svc-faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 24px 0;
+  font-size: clamp(18px, 1.7vw, 23px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.svc-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.svc-faq summary::after {
+  content: "+";
+  flex: none;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--accent-deep);
+  transition: transform 0.25s var(--ease);
+}
+
+.svc-faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.svc-faq details > div {
+  padding: 0 0 22px;
+}
+
+.svc-faq details p {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+
+.svc-faq details p + p {
+  margin-top: 10px;
+}
+
+/* ---- CTA band ----------------------------------------------------------------- */
+
+.svc-band {
+  background: var(--teal-deep);
+  color: #ffffff;
+}
+
+.svc-band .svc-wrap {
+  padding-block: clamp(48px, 6vw, 84px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px 48px;
+  align-items: center;
+}
+
+.svc-band h2 {
+  color: #ffffff;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  max-width: 22ch;
+}
+
+.svc-band p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 56ch;
+}
+
+.btn-solid {
+  display: inline-block;
+  background: #ffffff;
+  color: var(--teal-deep);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 16px 30px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.btn-solid:hover {
+  opacity: 0.88;
+}
+
+/* ---- related links -------------------------------------------------------------- */
+
+.svc-related {
+  border-top: 1px solid var(--line);
+  padding-block: clamp(44px, 6vw, 80px);
+}
+
+.svc-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.svc-related-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  min-height: 120px;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  padding: 20px 22px;
+  font-size: clamp(17px, 1.5vw, 21px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.svc-related-grid a span:last-child {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-deep);
+}
+
+.svc-related-grid a:hover {
+  background: var(--paper-2);
+  border-color: var(--accent);
+}
+
+/* ---- blog ---------------------------------------------------------------------- */
+
+.blog-article {
+  max-width: 760px;
+  margin-inline: auto;
+  padding-block: clamp(48px, 7vw, 96px);
+}
+
+.blog-article h1 {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+
+.blog-meta {
+  font-size: 13.5px;
+  color: var(--ink-3);
+  margin-bottom: 36px;
+}
+
+.blog-article h2 {
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.018em;
+  margin: 52px 0 16px;
+}
+
+.blog-article h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 28px 0 10px;
+}
+
+.blog-card {
+  display: block;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  padding: 30px 32px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.blog-card:hover {
+  background: var(--paper-2);
+  border-color: var(--accent);
+}
+
+.blog-card h2 {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 8px 0 12px;
+}
+
+.blog-card p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0;
+  max-width: 64ch;
+}
+
+/* ================================================================================
+   Responsive
+   ================================================================================ */
+
+@media (max-width: 860px) {
+  .svc-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .svc-hero {
+    min-height: clamp(420px, 74svh, 560px);
+  }
+
+  .svc-split figure {
+    position: static;
+  }
+
+  .svc-split.is-flipped figure {
+    order: 0;
+  }
+
+  .svc-glance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-glance-grid > div {
+    border-right: 0;
+    margin-right: 0;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .svc-glance-grid > div:last-child {
+    border-bottom: 0;
+  }
+
+  .svc-band .svc-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-steps li {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-page *,
+  .svc-page *::before,
+  .svc-page *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

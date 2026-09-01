@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%238F6347%22/%3E%3Ctext%20x%3D%2233%22%20y%3D%2245%22%20font-family%3D%22serif%22%20font-size%3D%2238%22%20font-weight%3D%22600%22%20fill%3D%22%23FBFAF9%22%20text-anchor%3D%22middle%22%3EF%3C/text%3E%3C/svg%3E">
+  <title>Mortgage Tools & Calculators | Foroughi &amp; Co — Ontario Mortgage Agent</title>
+  <meta name="description" content="Canadian mortgage payment and affordability calculators: semi-annual compounding, CMHC insurance tiers, GDS/TDS ratios, and the federal stress test — run the numbers before the call.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tw.css?v=11">
+</head>
+<body class="bg-cream text-inkc font-sans" data-service="">
+  <div class="site-top">
+  <div class="flex justify-start md:justify-center gap-6 md:gap-8 text-[11px] uppercase tracking-widest py-2.5 px-4 border-b border-black/5 text-inkc/70 overflow-x-auto">
+    <a class="whitespace-nowrap transition-colors hover:text-brown" href="index.html">Home</a>
+    <button type="button" data-open-menu="menuOverlay" aria-expanded="false" aria-controls="menuOverlay" class="whitespace-nowrap transition-colors hover:text-brown uppercase tracking-widest inline-flex items-center gap-1.5">Mortgages<svg viewBox="0 0 10 6" class="w-2 h-1.5" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1l4 4 4-4"/></svg></button>
+    <a class="whitespace-nowrap transition-colors text-brown border-b border-brown/50 pb-px" href="tools.html">Tools</a>
+    <button type="button" data-open-menu="aboutOverlay" aria-expanded="false" aria-controls="aboutOverlay" class="whitespace-nowrap transition-colors hover:text-brown uppercase tracking-widest inline-flex items-center gap-1.5">About<svg viewBox="0 0 10 6" class="w-2 h-1.5" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1l4 4 4-4"/></svg></button>
+  </div>
+  <header class="flex items-center justify-between px-6 py-5">
+    <a href="index.html" class="text-2xl uppercase text-inkc brand-mark">Foroughi<span class="ms-2 normal-case">&amp; Co</span></a>
+    <a href="tel:+14166027093" class="hidden sm:inline-block uppercase text-xs tracking-widest text-inkc/70 hover:text-brown transition-colors">(416) 602-7093</a>
+    <span class="sm:hidden"></span>
+  </header>
+  <div class="nav-reveal" id="menuOverlay" role="region" aria-label="Mortgage services">
+    <div class="nav-reveal-inner">
+      <div class="nav-reveal-scroll">
+        <div class="nav-reveal-grid">
+          <div class="nav-reveal-cols">
+            <div>
+              <p class="nav-reveal-head">Buy</p>
+              <ul class="nav-reveal-list">
+                <li><a href="mortgages/pre-qualify.html">Pre-Qualify</a></li>
+                <li><a href="mortgages/first-time-home-buyer.html">First-Time Buyer</a></li>
+                <li><a href="mortgages/investment-properties.html">Investment Properties</a></li>
+                <li><a href="mortgages/pre-construction.html">Pre-Construction</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="nav-reveal-head">Manage</p>
+              <ul class="nav-reveal-list">
+                <li><a href="mortgages/renewals-and-switches.html">Renewals &amp; Switches</a></li>
+                <li><a href="mortgages/refinance.html">Refinance</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="nav-reveal-head">Your situation</p>
+              <ul class="nav-reveal-list">
+                <li><a href="mortgages/self-employed.html">Self-Employed</a></li>
+                <li><a href="mortgages/newcomers-to-canada.html">Newcomers to Canada</a></li>
+                <li><a href="mortgages/private-lending.html">Private &amp; Alternative Lending</a></li>
+                <li><a href="mortgages/complex-mortgages.html">Complex Mortgages</a></li>
+                <li><a href="mortgages/business-commercial.html">Business &amp; Commercial</a></li>
+              </ul>
+            </div>
+          </div>
+          <dl class="nav-reveal-info">
+            <dt>Speak to Amir</dt>
+            <dd><a href="tel:+14166027093">(416) 602-7093</a><br>
+                <a href="mailto:amir.foroughi@rmabroker.ca">amir.foroughi@rmabroker.ca</a></dd>
+            <dt>Hours</dt>
+            <dd>Monday&ndash;Saturday, 9:00&ndash;19:00</dd>
+            <dt>Serving</dt>
+            <dd>Toronto &amp; all of Ontario<br>Amir Foroughi &middot; Mortgage Agent #M26000833<br>Real Mortgage Associates &middot; Brokerage #10464</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-reveal nav-reveal-about" id="aboutOverlay" role="region" aria-label="About and more">
+    <div class="nav-reveal-inner">
+      <div class="nav-reveal-scroll">
+        <div class="nav-reveal-grid">
+          <div class="nav-reveal-cols">
+            <div>
+              <p class="nav-reveal-head">About &amp; more</p>
+              <ul class="nav-reveal-list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+          <dl class="nav-reveal-info">
+            <dt>Speak to Amir</dt>
+            <dd><a href="tel:+14166027093">(416) 602-7093</a><br>
+                <a href="mailto:amir.foroughi@rmabroker.ca">amir.foroughi@rmabroker.ca</a></dd>
+            <dt>Hours</dt>
+            <dd>Monday&ndash;Saturday, 9:00&ndash;19:00</dd>
+            <dt>Serving</dt>
+            <dd>Toronto &amp; all of Ontario<br>Amir Foroughi &middot; Mortgage Agent #M26000833<br>Real Mortgage Associates &middot; Brokerage #10464</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <main>
+  <section class="py-16 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <p class="uppercase tracking-widest text-xs text-brown mb-5">Tools</p>
+      <h1 class="font-serif text-4xl md:text-5xl leading-snug">Run the numbers before the phone call.</h1>
+      <p class="text-base leading-relaxed text-inkc/70 mt-5">Payment and affordability estimates using standard Canadian mortgage math — semi-annual compounding, CMHC-style insurance tiers, GDS/TDS ratios, and the federal stress test.</p>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-4 pb-20">
+
+  <div class="flex justify-center gap-2 mb-8">
+    <button id="tabPaymentBtn" class="px-6 py-2.5 rounded-sm uppercase text-xs tracking-widest border border-black/15 transition-colors duration-300 tab-active">Payment Calculator</button>
+    <button id="tabAffordBtn" class="px-6 py-2.5 rounded-sm uppercase text-xs tracking-widest border border-black/15 transition-colors duration-300">Affordability Calculator</button>
+  </div>
+
+  <!-- ===================== PAYMENT CALCULATOR ===================== -->
+  <section id="paymentPanel" class="bg-white rounded-sm border border-black/10 p-6 md:p-10 space-y-8">
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Home Purchase Price</label>
+        <div class="flex items-center gap-2">
+          <span class="text-inkc/40">$</span>
+          <input id="pPrice" type="number" value="750000" step="1000"
+                 class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+        </div>
+        <input id="pPriceSlider" type="range" min="100000" max="3000000" step="5000" value="750000" class="w-full mt-3">
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Down Payment</label>
+        <div class="flex items-center gap-2">
+          <span class="text-inkc/40">$</span>
+          <input id="pDown" type="number" value="150000" step="1000"
+                 class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+        </div>
+        <input id="pDownSlider" type="range" min="0" max="3000000" step="1000" value="150000" class="w-full mt-3">
+        <div class="flex gap-2 mt-3 text-xs">
+          <button data-down="min" class="down-preset px-3 py-1.5 border border-black/15 rounded-sm uppercase tracking-wide text-[11px] hover:border-brown hover:text-brown transition-colors">Minimum</button>
+          <button data-down="20" class="down-preset px-3 py-1.5 border border-black/15 rounded-sm uppercase tracking-wide text-[11px] hover:border-brown hover:text-brown transition-colors">20%</button>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Mortgage Term / Product</label>
+        <select id="pTerm" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm"></select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Mortgage Rate</label>
+        <div class="flex items-center gap-2">
+          <input id="pRate" type="number" value="4.09" step="0.01" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+          <span class="text-inkc/40">%</span>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Payment Frequency</label>
+        <select id="pFreq" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm">
+          <option value="monthly">Monthly</option>
+          <option value="semi-monthly">Semi-Monthly</option>
+          <option value="biweekly">Biweekly</option>
+          <option value="biweekly-accelerated">Biweekly Accelerated</option>
+          <option value="weekly">Weekly</option>
+          <option value="weekly-accelerated">Weekly Accelerated</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Amortization Period</label>
+        <select id="pAmort" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm">
+          <option value="5">5 Years</option>
+          <option value="10">10 Years</option>
+          <option value="15">15 Years</option>
+          <option value="20">20 Years</option>
+          <option value="25" selected>25 Years</option>
+          <option value="30">30 Years</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2">
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Payment</div>
+        <div id="outPayment" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Required Insurance</div>
+        <div id="outInsurance" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Total Mortgage Required</div>
+        <div id="outTotalMortgage" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Interest Paid Over Term</div>
+        <div id="outInterestTerm" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Principal Paid Over Term</div>
+        <div id="outPrincipalTerm" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Balance at End of Term</div>
+        <div id="outBalanceTerm" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-serif text-2xl mb-3">Yearly Amortization Summary</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="text-left border-b border-black/10 text-inkc/50 uppercase text-[11px] tracking-widest">
+              <th class="py-2 font-semibold">Year</th><th class="font-semibold">Total Paid</th><th class="font-semibold">Interest</th><th class="font-semibold">Principal</th><th class="font-semibold">Balance</th>
+            </tr>
+          </thead>
+          <tbody id="amortTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AFFORDABILITY CALCULATOR ===================== -->
+  <section id="affordPanel" class="hidden bg-white rounded-sm border border-black/10 p-6 md:p-10 space-y-8">
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Gross Annual Household Income</label>
+        <input id="aIncome" type="number" value="150000" step="1000" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Monthly Debt Payments</label>
+        <input id="aDebts" type="number" value="500" step="50" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Down Payment</label>
+        <input id="aDown" type="number" value="100000" step="1000" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Monthly Property Tax</label>
+        <input id="aTax" type="number" value="300" step="10" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Monthly Condo Fees</label>
+        <input id="aCondo" type="number" value="0" step="10" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Monthly Heat</label>
+        <input id="aHeat" type="number" value="120" step="10" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Rate Type</label>
+        <select id="aRateType" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm">
+          <option value="fixed" selected>Fixed</option>
+          <option value="variable">Variable</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Rate Term / Product</label>
+        <select id="aTerm" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm"></select>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">Amortization</label>
+        <select id="aAmort" class="w-full border border-black/15 rounded px-3 py-2.5 bg-white text-sm">
+          <option value="25" selected>25 Years</option>
+          <option value="30">30 Years</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide mb-2">GDS / TDS Limits</label>
+        <div class="flex items-center gap-2 text-sm">
+          <span class="w-9 text-inkc/60">GDS</span><input id="aGds" type="range" min="30" max="39" value="39" class="w-full">
+          <span id="aGdsVal" class="w-10 text-right">39%</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm mt-2">
+          <span class="w-9 text-inkc/60">TDS</span><input id="aTds" type="range" min="36" max="44" value="44" class="w-full">
+          <span id="aTdsVal" class="w-10 text-right">44%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2">
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Maximum Purchase Price</div>
+        <div id="outMaxPrice" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Maximum Mortgage Amount</div>
+        <div id="outMaxMortgage" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Stress Test Rate</div>
+        <div id="outStressRate" class="font-serif text-2xl mt-1">0%</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">Max Monthly Mortgage Payment</div>
+        <div id="outMaxPayment" class="font-serif text-2xl mt-1">$0</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">GDS Used</div>
+        <div id="outGdsUsed" class="font-serif text-2xl mt-1">0%</div>
+      </div>
+      <div class="stat-block">
+        <div class="text-[11px] uppercase tracking-widest opacity-70">TDS Used</div>
+        <div id="outTdsUsed" class="font-serif text-2xl mt-1">0%</div>
+      </div>
+    </div>
+  </section>
+
+  <p class="text-xs text-inkc/50 leading-relaxed mt-8 max-w-3xl mx-auto text-center">Rates shown in the product menus are sample posted rates for illustration only and change without notice. Estimates are not a commitment to lend and are not financial advice — every real file gets priced against live lender rates on a call. All mortgage products on approved credit (OAC).</p>
+  </div>
+
+<script>
+/* =========================================================================
+ * 1. CENTRALIZED RATE + RULE CONFIGURATION
+ * Update this single block whenever posted rates or federal rules change —
+ * every calculator below reads from here, nothing is hardcoded in the UI.
+ * ========================================================================= */
+const MORTGAGE_CONFIG = {
+  rates: {
+    "6M_FIXED":    { label: "6 Month Fixed",    rate: 2.20, type: "fixed",    termYears: 0.5 },
+    "1Y_FIXED":    { label: "1 Year Fixed",     rate: 4.29, type: "fixed",    termYears: 1 },
+    "2Y_FIXED":    { label: "2 Year Fixed",     rate: 3.94, type: "fixed",    termYears: 2 },
+    "3Y_FIXED":    { label: "3 Year Fixed",     rate: 3.94, type: "fixed",    termYears: 3 },
+    "4Y_FIXED":    { label: "4 Year Fixed",     rate: 4.14, type: "fixed",    termYears: 4 },
+    "5Y_FIXED":    { label: "5 Year Fixed",     rate: 4.09, type: "fixed",    termYears: 5 },
+    "5Y_VARIABLE": { label: "5 Year Variable",  rate: 3.49, type: "variable", termYears: 5 },
+    "5Y_OPEN":     { label: "5 Year Open",      rate: 4.20, type: "fixed",    termYears: 5 }
+  },
+  defaultTerm: "5Y_FIXED",
+
+  minDownPayment: {
+    tier1Ceiling: 500000,
+    tier1Rate: 0.05,
+    tier2Ceiling: 1500000,
+    tier2Rate: 0.10,
+    conventionalRate: 0.20
+  },
+
+  insurancePremiumBands: [
+    { minPct: 0.05, maxPct: 0.0999, premium: 0.0400 },
+    { minPct: 0.10, maxPct: 0.1499, premium: 0.0310 },
+    { minPct: 0.15, maxPct: 0.1999, premium: 0.0280 },
+    { minPct: 0.20, maxPct: 1.00,   premium: 0 }
+  ],
+  extendedAmortSurcharge: 0.0020,
+
+  affordability: {
+    defaultGdsLimit: 0.39,
+    defaultTdsLimit: 0.44,
+    stressTestBufferPct: 2.00,
+    stressTestFloorPct: 5.25,
+    rentalIncomeOffsetPct: 0.50
+  }
+};
+
+const FREQUENCIES = {
+  "monthly":              { periodsPerYear: 12 },
+  "semi-monthly":         { periodsPerYear: 24 },
+  "biweekly":             { periodsPerYear: 26 },
+  "biweekly-accelerated": { periodsPerYear: 26 },
+  "weekly":               { periodsPerYear: 52 },
+  "weekly-accelerated":   { periodsPerYear: 52 }
+};
+
+/* =========================================================================
+ * 2. CORE CANADIAN MORTGAGE MATH
+ * ========================================================================= */
+
+function periodicRate(annualRatePct, rateType, periodsPerYear) {
+  const R = annualRatePct / 100;
+  const compoundsPerYear = rateType === "variable" ? 12 : 2;
+  return Math.pow(1 + R / compoundsPerYear, compoundsPerYear / periodsPerYear) - 1;
+}
+
+function canadianMonthlyRate(annualRatePct, rateType) {
+  return periodicRate(annualRatePct, rateType, 12);
+}
+
+function calculatePayment({ principal, annualRatePct, rateType, amortYears, frequency }) {
+  const monthlyRate = canadianMonthlyRate(annualRatePct, rateType);
+  const nMonths = amortYears * 12;
+  const monthlyPayment = monthlyRate === 0
+    ? principal / nMonths
+    : principal * monthlyRate / (1 - Math.pow(1 + monthlyRate, -nMonths));
+
+  if (frequency === "monthly") return monthlyPayment;
+  if (frequency === "biweekly-accelerated") return monthlyPayment / 2;
+  if (frequency === "weekly-accelerated") return monthlyPayment / 4;
+
+  const periodsPerYear = FREQUENCIES[frequency].periodsPerYear;
+  const rate = periodicRate(annualRatePct, rateType, periodsPerYear);
+  const nPeriods = amortYears * periodsPerYear;
+  return rate === 0 ? principal / nPeriods : principal * rate / (1 - Math.pow(1 + rate, -nPeriods));
+}
+
+function calculateMinDownPayment(purchasePrice) {
+  const c = MORTGAGE_CONFIG.minDownPayment;
+  if (purchasePrice <= c.tier1Ceiling) return purchasePrice * c.tier1Rate;
+  if (purchasePrice <= c.tier2Ceiling) return c.tier1Ceiling * c.tier1Rate + (purchasePrice - c.tier1Ceiling) * c.tier2Rate;
+  return purchasePrice * c.conventionalRate;
+}
+
+function calculateInsurancePremium(purchasePrice, downPayment, amortYears) {
+  if (purchasePrice <= 0) return 0;
+  const downPct = downPayment / purchasePrice;
+  if (downPct >= 0.20) return 0;
+  const loanAmount = purchasePrice - downPayment;
+  const band = MORTGAGE_CONFIG.insurancePremiumBands.find(b => downPct >= b.minPct && downPct <= b.maxPct);
+  let rate = band ? band.premium : 0;
+  if (amortYears > 25) rate += MORTGAGE_CONFIG.extendedAmortSurcharge;
+  return loanAmount * rate;
+}
+
+function buildAmortizationSchedule({ principal, annualRatePct, rateType, amortYears, frequency }) {
+  const periodsPerYear = FREQUENCIES[frequency].periodsPerYear;
+  const rate = periodicRate(annualRatePct, rateType, periodsPerYear);
+  const payment = calculatePayment({ principal, annualRatePct, rateType, amortYears, frequency });
+
+  let balance = principal;
+  const schedule = [];
+  const maxPeriods = amortYears * periodsPerYear * 2;
+  let period = 0;
+  while (balance > 0.01 && period < maxPeriods) {
+    period++;
+    const interest = balance * rate;
+    let principalPortion = payment - interest;
+    if (principalPortion > balance) principalPortion = balance;
+    balance = Math.max(0, balance - principalPortion);
+    schedule.push({ period, interest, principal: principalPortion, balance });
+  }
+  return { schedule, payment, periodsPerYear };
+}
+
+function summarizeTerm(schedule, termYears, periodsPerYear) {
+  const termPeriods = Math.min(schedule.length, Math.round(termYears * periodsPerYear));
+  const slice = schedule.slice(0, termPeriods);
+  return {
+    totalInterest: slice.reduce((s, p) => s + p.interest, 0),
+    totalPrincipal: slice.reduce((s, p) => s + p.principal, 0),
+    endingBalance: slice.length ? slice[slice.length - 1].balance : 0
+  };
+}
+
+/* =========================================================================
+ * 3. AFFORDABILITY MATH (GDS / TDS ratios + federal stress test)
+ * ========================================================================= */
+function calculateStressTestRate(contractRatePct) {
+  const c = MORTGAGE_CONFIG.affordability;
+  return Math.max(contractRatePct + c.stressTestBufferPct, c.stressTestFloorPct);
+}
+
+function calculateAffordability({
+  grossAnnualIncome, monthlyDebts, downPayment,
+  propertyTaxMonthly = 0, condoFeesMonthly = 0, heatMonthly = 0,
+  rentalIncomeMonthly = 0, contractRatePct, rateType, amortYears,
+  gdsLimit, tdsLimit
+}) {
+  const c = MORTGAGE_CONFIG.affordability;
+  const grossMonthlyIncome = grossAnnualIncome / 12 + rentalIncomeMonthly * c.rentalIncomeOffsetPct;
+  const otherHousingCosts = propertyTaxMonthly + heatMonthly + condoFeesMonthly * 0.5;
+
+  const maxByGds = grossMonthlyIncome * gdsLimit - otherHousingCosts;
+  const maxByTds = grossMonthlyIncome * tdsLimit - monthlyDebts - otherHousingCosts;
+  const maxMortgagePayment = Math.max(0, Math.min(maxByGds, maxByTds));
+
+  const stressRate = calculateStressTestRate(contractRatePct);
+  const monthlyRate = canadianMonthlyRate(stressRate, rateType);
+  const nMonths = amortYears * 12;
+  const maxMortgage = monthlyRate === 0
+    ? maxMortgagePayment * nMonths
+    : maxMortgagePayment * (1 - Math.pow(1 + monthlyRate, -nMonths)) / monthlyRate;
+
+  const totalHousing = maxMortgagePayment + otherHousingCosts;
+  return {
+    grossMonthlyIncome,
+    maxMortgagePayment,
+    stressRate,
+    maxMortgage,
+    maxPurchasePrice: maxMortgage + downPayment,
+    gdsUsedPct: grossMonthlyIncome > 0 ? (totalHousing / grossMonthlyIncome) * 100 : 0,
+    tdsUsedPct: grossMonthlyIncome > 0 ? ((totalHousing + monthlyDebts) / grossMonthlyIncome) * 100 : 0
+  };
+}
+
+/* =========================================================================
+ * 4. UI WIRING
+ * ========================================================================= */
+const fmtMoney = n => "$" + Math.round(n).toLocaleString("en-CA");
+const fmtPct = n => n.toFixed(2) + "%";
+
+function populateTermSelect(selectEl) {
+  Object.entries(MORTGAGE_CONFIG.rates).forEach(([key, cfg]) => {
+    const opt = document.createElement("option");
+    opt.value = key;
+    opt.textContent = cfg.label + " — " + cfg.rate.toFixed(2) + "%";
+    if (key === MORTGAGE_CONFIG.defaultTerm) opt.selected = true;
+    selectEl.appendChild(opt);
+  });
+}
+
+/* ---- Tabs ---- */
+const tabPaymentBtn = document.getElementById("tabPaymentBtn");
+const tabAffordBtn = document.getElementById("tabAffordBtn");
+const paymentPanel = document.getElementById("paymentPanel");
+const affordPanel = document.getElementById("affordPanel");
+tabPaymentBtn.addEventListener("click", () => {
+  paymentPanel.classList.remove("hidden"); affordPanel.classList.add("hidden");
+  tabPaymentBtn.classList.add("tab-active"); tabAffordBtn.classList.remove("tab-active");
+});
+tabAffordBtn.addEventListener("click", () => {
+  affordPanel.classList.remove("hidden"); paymentPanel.classList.add("hidden");
+  tabAffordBtn.classList.add("tab-active"); tabPaymentBtn.classList.remove("tab-active");
+});
+
+/* ---- Payment Calculator elements ---- */
+const pPrice = document.getElementById("pPrice"), pPriceSlider = document.getElementById("pPriceSlider");
+const pDown = document.getElementById("pDown"), pDownSlider = document.getElementById("pDownSlider");
+const pTerm = document.getElementById("pTerm"), pRate = document.getElementById("pRate");
+const pFreq = document.getElementById("pFreq"), pAmort = document.getElementById("pAmort");
+populateTermSelect(pTerm);
+
+function syncPair(numberEl, sliderEl) {
+  numberEl.addEventListener("input", () => { sliderEl.value = numberEl.value; renderPayment(); });
+  sliderEl.addEventListener("input", () => { numberEl.value = sliderEl.value; renderPayment(); });
+}
+syncPair(pPrice, pPriceSlider);
+syncPair(pDown, pDownSlider);
+
+pTerm.addEventListener("change", () => {
+  pRate.value = MORTGAGE_CONFIG.rates[pTerm.value].rate.toFixed(2);
+  renderPayment();
+});
+[pRate, pFreq, pAmort].forEach(el => el.addEventListener("input", renderPayment));
+
+document.querySelectorAll(".down-preset").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const price = parseFloat(pPrice.value) || 0;
+    const val = btn.dataset.down === "min" ? calculateMinDownPayment(price) : price * 0.20;
+    pDown.value = Math.round(val);
+    pDownSlider.value = Math.round(val);
+    renderPayment();
+  });
+});
+
+function renderPayment() {
+  const price = parseFloat(pPrice.value) || 0;
+  let down = parseFloat(pDown.value) || 0;
+  if (down > price) down = price;
+  const termCfg = MORTGAGE_CONFIG.rates[pTerm.value];
+  const rate = parseFloat(pRate.value) || 0;
+  const amortYears = parseInt(pAmort.value, 10);
+  const frequency = pFreq.value;
+
+  const insurance = calculateInsurancePremium(price, down, amortYears);
+  const principal = Math.max(0, price - down) + insurance;
+
+  const { schedule, payment, periodsPerYear } = buildAmortizationSchedule({
+    principal, annualRatePct: rate, rateType: termCfg.type, amortYears, frequency
+  });
+  const term = summarizeTerm(schedule, termCfg.termYears, periodsPerYear);
+
+  document.getElementById("outPayment").textContent = fmtMoney(payment);
+  document.getElementById("outInsurance").textContent = fmtMoney(insurance);
+  document.getElementById("outTotalMortgage").textContent = fmtMoney(principal);
+  document.getElementById("outInterestTerm").textContent = fmtMoney(term.totalInterest);
+  document.getElementById("outPrincipalTerm").textContent = fmtMoney(term.totalPrincipal);
+  document.getElementById("outBalanceTerm").textContent = fmtMoney(term.endingBalance);
+
+  const tbody = document.getElementById("amortTableBody");
+  tbody.innerHTML = "";
+  let year = 1, paidY = 0, intY = 0, prinY = 0;
+  schedule.forEach((p, i) => {
+    intY += p.interest; prinY += p.principal; paidY += p.interest + p.principal;
+    if ((i + 1) % periodsPerYear === 0 || i === schedule.length - 1) {
+      const tr = document.createElement("tr");
+      tr.className = "border-b border-black/5";
+      tr.innerHTML = "<td class='py-2'>" + year + "</td><td>" + fmtMoney(paidY) + "</td><td>" +
+        fmtMoney(intY) + "</td><td>" + fmtMoney(prinY) + "</td><td>" + fmtMoney(p.balance) + "</td>";
+      tbody.appendChild(tr);
+      year++; paidY = 0; intY = 0; prinY = 0;
+    }
+  });
+}
+
+/* ---- Affordability Calculator elements ---- */
+const aIncome = document.getElementById("aIncome"), aDebts = document.getElementById("aDebts");
+const aDown = document.getElementById("aDown"), aTax = document.getElementById("aTax");
+const aCondo = document.getElementById("aCondo"), aHeat = document.getElementById("aHeat");
+const aRateType = document.getElementById("aRateType"), aTerm = document.getElementById("aTerm");
+const aAmort = document.getElementById("aAmort"), aGds = document.getElementById("aGds"), aTds = document.getElementById("aTds");
+populateTermSelect(aTerm);
+
+function renderAfford() {
+  document.getElementById("aGdsVal").textContent = aGds.value + "%";
+  document.getElementById("aTdsVal").textContent = aTds.value + "%";
+  const termCfg = MORTGAGE_CONFIG.rates[aTerm.value];
+
+  const r = calculateAffordability({
+    grossAnnualIncome: parseFloat(aIncome.value) || 0,
+    monthlyDebts: parseFloat(aDebts.value) || 0,
+    downPayment: parseFloat(aDown.value) || 0,
+    propertyTaxMonthly: parseFloat(aTax.value) || 0,
+    condoFeesMonthly: parseFloat(aCondo.value) || 0,
+    heatMonthly: parseFloat(aHeat.value) || 0,
+    contractRatePct: termCfg.rate,
+    rateType: aRateType.value,
+    amortYears: parseInt(aAmort.value, 10),
+    gdsLimit: parseInt(aGds.value, 10) / 100,
+    tdsLimit: parseInt(aTds.value, 10) / 100
+  });
+
+  document.getElementById("outMaxPrice").textContent = fmtMoney(r.maxPurchasePrice);
+  document.getElementById("outMaxMortgage").textContent = fmtMoney(r.maxMortgage);
+  document.getElementById("outStressRate").textContent = fmtPct(r.stressRate);
+  document.getElementById("outMaxPayment").textContent = fmtMoney(r.maxMortgagePayment);
+  document.getElementById("outGdsUsed").textContent = fmtPct(r.gdsUsedPct);
+  document.getElementById("outTdsUsed").textContent = fmtPct(r.tdsUsedPct);
+}
+
+[aIncome, aDebts, aDown, aTax, aCondo, aHeat, aRateType, aTerm, aAmort, aGds, aTds]
+  .forEach(el => el.addEventListener("input", renderAfford));
+
+renderPayment();
+renderAfford();
+</script>
+
+  </main>
+
+  <footer class="bg-warm1 pt-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 px-8 md:px-14 pb-12">
+      <div>
+        <p class="font-serif text-2xl mb-2">Notes from the practice</p>
+        <p class="text-sm text-inkc/60 mb-4">Occasional, plain-English notes on rates and rules. No noise.</p>
+        <form data-newsletter class="flex gap-2">
+          <input type="email" required class="border border-black/10 rounded px-4 py-3 flex-1 bg-cream text-sm min-w-0" placeholder="Email address">
+          <button class="border border-black/20 px-4 py-3 uppercase text-xs rounded hover:border-brown hover:text-brown transition-colors">Sign up</button>
+        </form>
+        <p data-newsletter-ok class="hidden text-sm text-teal mt-3">You're on the list — expect the occasional useful note, nothing more.</p>
+      </div>
+      <div>
+        <p class="text-brown mb-4 uppercase text-xs tracking-widest">Mortgage services</p>
+        <ul class="space-y-2 text-sm text-inkc/70">
+          <li><a class="hover:text-brown transition-colors" href="mortgages/renewals-and-switches.html">Renewals &amp; Switches</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/self-employed.html">Self-Employed</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/first-time-home-buyer.html">First-Time Buyer</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/refinance.html">Refinance</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/investment-properties.html">Investment Properties</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/newcomers-to-canada.html">Newcomers to Canada</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-brown mb-4 uppercase text-xs tracking-widest">More services</p>
+        <ul class="space-y-2 text-sm text-inkc/70">
+          <li><a class="hover:text-brown transition-colors" href="mortgages/private-lending.html">Private &amp; Alternative Lending</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/complex-mortgages.html">Complex Mortgages</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/reverse-mortgage.html">Reverse Mortgage</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/pre-qualify.html">Pre-Qualify</a></li>
+          <li><a class="hover:text-brown transition-colors" href="mortgages/moving-up.html">Moving Up</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-brown mb-4 uppercase text-xs tracking-widest">The practice</p>
+        <ul class="space-y-2 text-sm text-inkc/70">
+          <li><a class="hover:text-brown transition-colors" href="tools.html">Tools &amp; calculators</a></li>
+          <li><a class="hover:text-brown transition-colors" href="blog/index.html">Blog</a></li>
+          <li><a class="hover:text-brown transition-colors" href="about.html">About Amir</a></li>
+          <li><a class="hover:text-brown transition-colors" href="contact.html">Contact</a></li>
+          <li><a class="hover:text-brown transition-colors" href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-teal text-white flex flex-col md:flex-row gap-2 justify-between px-8 md:px-14 py-4 text-xs">
+      <span>© 2026 Foroughi &amp; Co</span>
+      <span class="opacity-80">Amir Foroughi · Mortgage Agent #M26000833 · Real Mortgage Associates · Brokerage #10464 · OAC</span>
+      <span class="flex gap-4"><a class="underline-offset-2 hover:underline" href="privacy.html">Privacy</a><a class="underline-offset-2 hover:underline" href="contact.html">Contact</a></span>
+    </div>
+  </footer>
+  <div id="panelOverlay" class="fixed inset-0 z-50 bg-inkc/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle" class="fixed top-0 right-0 translate-x-full z-50 h-full w-full max-w-md bg-cream overflow-y-auto transition-transform duration-500 p-9 md:p-12" style="transition-timing-function:cubic-bezier(.22,.8,.2,1)">
+    <button data-close-panel aria-label="Close" class="absolute top-4 right-4 w-11 h-11 rounded-full text-2xl text-inkc/50 hover:text-inkc hover:bg-black/5 transition-colors">×</button>
+    <h2 id="panelTitle" class="font-serif text-3xl">Request a callback</h2>
+    <p class="text-sm text-inkc/60 mt-3 leading-relaxed">Tell me where you are in the process. I'll call you back the same business day.</p>
+    <!-- TODO: point action at Web3Forms endpoint before launch (key in js/sub.js) -->
+    <form data-callback novalidate class="mt-8 space-y-5">
+      <div><label class="block text-xs font-semibold uppercase tracking-wide mb-2" for="cbName">Full name</label>
+        <input id="cbName" name="name" type="text" autocomplete="name" required class="w-full border border-black/15 rounded px-4 py-3 bg-white text-sm"></div>
+      <div><label class="block text-xs font-semibold uppercase tracking-wide mb-2" for="cbPhone">Phone</label>
+        <input id="cbPhone" name="phone" type="tel" autocomplete="tel" required class="w-full border border-black/15 rounded px-4 py-3 bg-white text-sm"></div>
+      <div><label class="block text-xs font-semibold uppercase tracking-wide mb-2" for="cbEmail">Email</label>
+        <input id="cbEmail" name="email" type="email" autocomplete="email" required class="w-full border border-black/15 rounded px-4 py-3 bg-white text-sm"></div>
+      <div><label class="block text-xs font-semibold uppercase tracking-wide mb-2" for="cbService">What's this about?</label>
+        <select id="cbService" name="service" required class="w-full border border-black/15 rounded px-4 py-3 bg-white text-sm">
+          <option value="" selected disabled>Choose one</option>
+          <option value="Pre-qualification">Pre-qualification</option>
+          <option value="Buying a home">Buying a home</option>
+          <option value="First-time buyer">First-time buyer</option>
+          <option value="Moving up — my next home">Moving up — my next home</option>
+          <option value="Renewal or switch">Renewal or switch</option>
+          <option value="Refinancing or accessing equity">Refinancing or accessing equity</option>
+          <option value="Self-employed mortgage">Self-employed mortgage</option>
+          <option value="Investment or rental property">Investment or rental property</option>
+          <option value="Vacation or second home">Vacation or second home</option>
+          <option value="New to Canada">New to Canada</option>
+          <option value="Reverse mortgage">Reverse mortgage</option>
+          <option value="Private or alternative lending">Private or alternative lending</option>
+          <option value="Something else">Something else</option>
+        </select></div>
+      <div><span class="block text-xs font-semibold uppercase tracking-wide mb-2">Best time to call</span>
+        <div class="grid grid-cols-3 gap-2" role="radiogroup">
+          <label class="border border-black/15 rounded-sm py-2.5 text-center text-xs cursor-pointer has-[:checked]:border-brown has-[:checked]:text-brown has-[:checked]:bg-brown/5"><input class="sr-only" type="radio" name="calltime" value="Morning" checked>Morning</label>
+          <label class="border border-black/15 rounded-sm py-2.5 text-center text-xs cursor-pointer has-[:checked]:border-brown has-[:checked]:text-brown has-[:checked]:bg-brown/5"><input class="sr-only" type="radio" name="calltime" value="Afternoon">Afternoon</label>
+          <label class="border border-black/15 rounded-sm py-2.5 text-center text-xs cursor-pointer has-[:checked]:border-brown has-[:checked]:text-brown has-[:checked]:bg-brown/5"><input class="sr-only" type="radio" name="calltime" value="Evening">Evening</label>
+        </div></div>
+      <div class="absolute -left-[9999px] h-0 overflow-hidden" aria-hidden="true"><label for="cbCompany">Company</label><input id="cbCompany" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+      <button type="submit" class="border border-[#8F6347] text-[#8F6347] uppercase text-xs tracking-widest px-6 py-3 rounded-sm hover:bg-[#8F6347] hover:text-[#FBFAF9] transition-colors duration-300 w-full !py-4">Request my callback</button>
+      <p class="text-xs text-inkc/50 text-center">No obligation. Your details stay in this office.</p>
+    </form>
+    <div data-form-success class="hidden mt-12">
+      <h3 class="font-serif text-3xl">Got it.</h3>
+      <p class="mt-4 text-sm leading-relaxed text-inkc/70">Your callback is in the queue — expect to hear from Amir within one business day.</p>
+    </div>
+  </aside>
+  <script src="js/sub.js?v=3"></script>
+</body>
+</html>
